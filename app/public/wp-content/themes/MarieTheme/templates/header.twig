@@ -1,0 +1,15 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ site.name }}</title>
+    {{ function('wp_head') }}
+</head>
+<body>
+    <header>
+        <h1>{{ site.name }}</h1>
+        <nav>
+            {{ function('wp_nav_menu', {'theme_location': 'main-menu'}) }}
+        </nav>
+    </header>

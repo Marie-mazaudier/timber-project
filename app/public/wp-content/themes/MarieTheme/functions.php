@@ -1,7 +1,8 @@
 <?php
 // Charger les styles et scripts
 function marie_theme_enqueue_styles() {
-    wp_enqueue_style('marie-style', get_stylesheet_uri());
+    wp_enqueue_style('test-css', '/wp-content/themes/MarieTheme/assets/css/reset.css');
+    wp_enqueue_script('test-js', '/wp-content/themes/MarieTheme/assets/js/script.js', array(), null, true);
 }
 add_action('wp_enqueue_scripts', 'marie_theme_enqueue_styles');
 

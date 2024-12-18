@@ -1,19 +1,8 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ site.name }}</title>
-</head>
-<body>
-    <header>
-        <h1>Bienvenue sur {{ site.name }}</h1>
-    </header>
-    <main>
-        <p>Voici votre premier template avec Timber !</p>
-    </main>
-    <footer>
-        <p>© {{ site.name }} - {{ "now"|date("Y") }}</p>
-    </footer>
-</body>
-</html>
+{% include 'header.twig' %}
+
+<main>
+    <h2>Bienvenue sur {{ site.name }}</h2>
+    <p>Ceci est le contenu principal de votre site.</p>
+</main>
+
+{% include 'footer.twig' %}
