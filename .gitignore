@@ -1,0 +1,29 @@
+# WordPress files
+wp-config.php
+wp-content/uploads/
+wp-content/upgrade/
+wp-content/backup/
+wp-content/cache/
+
+# Composer
+/vendor
+composer.lock
+
+# Node.js (si tu utilises des outils frontend comme npm)
+node_modules/
+package-lock.json
+yarn.lock
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Logs and temp
+*.log
+*.tmp
+
+# Local configuration
+.idea/
+.vscode/
+.env
+localphp.info

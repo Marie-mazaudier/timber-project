@@ -1,0 +1,47 @@
+[PHP] engine = On
+extension_dir="C:\Users\marie\AppData\Local\Programs\Local\resources\extraResources\lightning-services\php-8.2.23+0\bin\win64\ext"
+extension=mysqli extension=pdo_mysql sys_temp_dir="C:\Windows\TEMP" ; Maxes
+max_execution_time = 1200 max_input_time = 600 max_input_vars = 4000
+memory_limit = 256M post_max_size = 1000M max_file_uploads = 20 output_buffering
+= 4096 ; Error Handling error_reporting = E_ALL & ~E_DEPRECATED error_log =
+"C:\Users\marie\AppData\Local\Programs\Local\logs\php_error.log" log_errors = On
+display_errors = On display_startup_errors = On ignore_repeated_errors = Off
+ignore_repeated_source = Off report_memleaks = On html_errors = On ; Sendmail
+sendmail_path = "\"C:\Program Files\MailHog\mailhog.exe\" sendmail
+--smtp-addr=127.0.0.1:1025 mailhog@flywheel.local" ; Other settings
+short_open_tag = On asp_tags = Off precision = 14 zlib.output_compression = Off
+implicit_flush = Off serialize_precision = 17 allow_url_fopen = On
+allow_url_include = Off default_socket_timeout = 60 cgi.fix_pathinfo = 1
+file_uploads = On upload_max_filesize = 300M ; Charset default_mimetype =
+"text/html" default_charset = "UTF-8" ; Extensions extension=php_curl.dll
+extension=php_gettext.dll extension=php_openssl.dll extension=php_exif.dll
+extension=php_gd.dll extension=php_ftp.dll extension=php_ffi.dll
+extension=php_imap.dll extension=php_bz2.dll extension=php_mbstring.dll
+extension=php_sodium.dll extension=php_tidy.dll extension=php_xsl.dll
+extension=php_soap.dll
+ezend_extension="C:\Users\marie\AppData\Local\Programs\Local\resources\extraResources\lightning-services\php-8.2.23+0\bin\win64\ext\php_mysqli.dll"
+extension=php_pdo_mysql.dll extension=php_fileinfo.dll
+extension=php_pdo_sqlite.dll extension=php_sqlite3.dll extension=php_zip.dll
+[MySQL] mysql.allow_local_infile = On mysql.allow_persistent = On
+mysql.cache_size = 2000 mysql.max_persistent = -1 mysql.max_links = -1
+mysql.default_port = 3306 mysql.default_socket =
+"C:\Users\marie\AppData\Local\Programs\Local\run\mysql\mysql.sock"
+mysql.default_host = "localhost" mysql.connect_timeout = 60 mysql.trace_mode =
+Off [MySQLi] mysqli.max_persistent = -1 mysqli.allow_persistent = On
+mysqli.max_links = -1 mysqli.cache_size = 2000 mysqli.default_port = 3306
+mysqli.default_socket =
+"C:\Users\marie\AppData\Local\Programs\Local\run\mysql\mysql.sock"
+mysqli.default_host = "localhost" mysqli.default_user = mysqli.default_pw =
+mysqli.reconnect = Off [Pdo_Mysql] pdo_mysql.default_socket =
+"C:\Users\marie\AppData\Local\Programs\Local\run\mysql\mysql.sock"
+pdo_mysql.default_port = 3306 [imagick] extension=php_imagick.dll [intl]
+extension=php_intl.dll [Session] session.use_cookies = 1
+session.use_only_cookies = 1 session.name = PHPSESSID session.auto_start = 0
+session.cookie_lifetime = 0 session.cookie_path = / session.serialize_handler =
+php session.gc_probability = 0 session.gc_divisor = 1000 session.gc_maxlifetime
+= 1440 [soap] soap.wsdl_cache_enabled = 1 soap.wsdl_cache_ttl = 86400
+soap.wsdl_cache_limit = 5 [opcache] zend_extension = php_opcache.dll
+opcache.enable = 1 opcache.enable_cli = 1 [xdebug] zend_extension =
+php_xdebug.dll xdebug.mode = debug,develop xdebug.client_port = 9003
+xdebug.start_with_request = yes xdebug.discover_client_host = yes
+xdebug.log_level = 0
