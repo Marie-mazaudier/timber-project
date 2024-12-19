@@ -1,0 +1,24 @@
+{% extends 'base.twig' %} {% block content %}
+<main class="bg-gray-100 p-8">
+  <container class="mx-auto">
+    {# Afficher le contenu de la page d'accueil #}
+    <div class="mt-8 prose mx-auto">
+      {{ post.content }}
+    </div>
+
+    {# Afficher les articles récents #}
+    <section class="mt-12">
+      <h2 class="text-2xl font-semibold text-gray-800">Articles récents</h2>
+      <ul class="mt-4 space-y-4">
+        {% for post in posts %}
+        <li>
+          <a href="{{ post.link }}" class="text-blue-600 hover:underline">{{
+            post.title
+          }}</a>
+        </li>
+        {% endfor %}
+      </ul>
+    </section>
+  </container>
+</main>
+{% endblock %}

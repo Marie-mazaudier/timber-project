@@ -1,8 +1,23 @@
 <?php
 // Charger les styles et scripts
 function marie_theme_enqueue_styles() {
-    wp_enqueue_style('test-css', '/wp-content/themes/MarieTheme/assets/css/reset.css');
-    wp_enqueue_script('test-js', '/wp-content/themes/MarieTheme/assets/js/script.js', array(), null, true);
+ // Enfile le fichier CSS principal du thème
+ wp_enqueue_style(
+    'marie-theme-styles',
+    get_template_directory_uri() . '/assets/css/style-main.css',
+    array(),
+    filemtime(get_template_directory() . '/assets/css/style-main.css')
+);
+
+// Enfile le script JavaScript principal
+wp_enqueue_script(
+    'marie-theme-scripts',
+    get_template_directory_uri() . '/assets/js/script.js',
+    array(),
+    filemtime(get_template_directory() . '/assets/js/script.js'),
+    true
+);
+
 }
 add_action('wp_enqueue_scripts', 'marie_theme_enqueue_styles');
 
