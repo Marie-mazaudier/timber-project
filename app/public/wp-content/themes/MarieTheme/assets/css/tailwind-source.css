@@ -1,3 +1,11 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+/*.maclasssurmesure {
+    @apply text-xl font-bold text-red-500;
+}*/
+.sticky-on .logo {
+  width: 80px;
+  height: 80px;
+}

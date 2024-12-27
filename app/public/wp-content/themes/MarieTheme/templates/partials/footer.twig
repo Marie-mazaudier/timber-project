@@ -1,6 +1,22 @@
-    <footer>
-        <p>&copy; {{ "now"|date("Y") }} - {{ site.name }}. Tous droits réservés.</p>
-    </footer>
-    {{ function('wp_footer') }}
-</body>
-</html>
+<footer class="w-full bg-primary">
+  <div
+    class="mx-auto lg:px-8 font-poppins font-light text-xs lg:max-w-screen-2xl flex flex-col lg:flex-row items-center justify-center lg:justify-between bg-primary py-4 text-white">
+    <p class="lg:text-left text-center">
+      {{ footer_copyright }} <br />{{ footer_seo }}
+    </p>
+
+    <p
+      class="flex flex-col justify-center items-center lg:justify-end lg:items-end">
+      {% if footer_legal_link and footer_legal_text %}
+      <a href="{{ footer_legal_link }}" target="_blank">
+        {{ footer_legal_text }}
+      </a>
+      {% endif %} {% if footer_realisation_link and footer_realisation_text %}
+      <a href="{{ footer_realisation_link }}" target="_blank">
+        {{ footer_realisation_text }}
+      </a>
+      {% endif %}
+    </p>
+  </div>
+</footer>
+{{ function("wp_footer") }}

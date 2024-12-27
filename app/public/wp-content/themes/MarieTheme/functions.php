@@ -1,23 +1,22 @@
 <?php
 // Charger les styles et scripts
 function marie_theme_enqueue_styles() {
- // Enfile le fichier CSS principal du thème
- wp_enqueue_style(
-    'marie-theme-styles',
-    get_template_directory_uri() . '/assets/css/style-main.css',
-    array(),
-    filemtime(get_template_directory() . '/assets/css/style-main.css')
-);
+    // Enfile le fichier CSS principal du thème
+    wp_enqueue_style(
+        'marie-theme-styles',
+        get_template_directory_uri() . '/assets/css/style-main.css',
+        array(),
+        filemtime(get_template_directory() . '/assets/css/style-main.css')
+    );
 
-// Enfile le script JavaScript principal
-wp_enqueue_script(
-    'marie-theme-scripts',
-    get_template_directory_uri() . '/assets/js/script.js',
-    array(),
-    filemtime(get_template_directory() . '/assets/js/script.js'),
-    true
-);
-
+    // Enfile le script JavaScript principal
+    wp_enqueue_script(
+        'marie-theme-scripts',
+        get_template_directory_uri() . '/assets/js/script.js',
+        array(),
+        filemtime(get_template_directory() . '/assets/js/script.js'),
+        true
+    );
 }
 add_action('wp_enqueue_scripts', 'marie_theme_enqueue_styles');
 
@@ -38,8 +37,10 @@ if (class_exists('Timber\Timber')) {
     echo '<pre>Timber n’est pas chargé.</pre>';
     die();
 }
+
 // Configurer Timber pour le dossier "templates"
-Timber::$dirname = ['templates'];
+Timber::$dirname = ['templates', 'templates/partials'];
+
 // Initialiser Timber pour le thème
 class MarieTheme extends Timber\Site {
     public function __construct() {
@@ -54,3 +55,13 @@ class MarieTheme extends Timber\Site {
 }
 
 new MarieTheme();
+
+
+add_filter('template_include', function($template) {
+    if (is_home() && !is_front_page()) {
+        return get_template_directory() . '/archive.php';
+    }
+    return $template;
+});
+
+require_once get_template_directory() . '/inc/setup.php';

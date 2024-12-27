@@ -1,20 +1,17 @@
-{% extends 'base.twig' %}
-
-{% block content %}
+{% extends 'base.twig' %} {% block content %}
 <main>
-    <h1>{{ post.title }}</h1>
-    <div>
-        {{ post.content }}
-    </div>
+  <h1>{{ post.title }}</h1>
+  <div>
+    {{ post.content }}
+  </div>
 
-    {# Affichage des champs ACF #}
-  <section class="about-section">
+  {# Affichage des champs ACF #}
+  <section class="bg-slate-600 text-white">
     <h2 class="about-title">{{ titre_section }}</h2>
     <p class="about-description">{{ description }}</p>
     {% if image %}
-        <img class="about-image" src="{{ image.url }}" alt="{{ image.alt }}">
+    <img class="about-image" src="{{ image.url }}" alt="{{ image.alt }}" />
     {% endif %}
-</section>
-
+  </section>
 </main>
 {% endblock %}

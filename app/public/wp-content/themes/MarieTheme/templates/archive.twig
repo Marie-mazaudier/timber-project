@@ -1,0 +1,34 @@
+{% extends "base.twig" %} {% block content %}
+<h1 class="text-3xl font-bold mb-8">Blog</h1>
+
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+  {% for post in posts %}
+  <article class="border p-4 rounded shadow">
+    <h2 class="text-xl font-semibold">
+      <a href="{{ post.link }}" class="text-blue-600 hover:underline">
+        {{ post.title }}
+      </a>
+    </h2>
+    <p class="text-gray-700 mt-2">
+      {{ post.excerpt }}
+    </p>
+    <a
+      href="{{ post.link }}"
+      class="text-sm text-blue-500 hover:underline mt-4 inline-block">
+      Lire la suite →
+    </a>
+  </article>
+  {% endfor %}
+</div>
+
+{# Pagination #}
+<div class="mt-12">
+  {{
+    function("the_posts_pagination", {
+      mid_size: 2,
+      prev_text: "← Articles précédents",
+      next_text: "Articles suivants →"
+    })
+  }}
+</div>
+{% endblock %}

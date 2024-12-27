@@ -1,24 +1,91 @@
 {% extends 'base.twig' %} {% block content %}
-<main class="bg-gray-100 p-8">
-  <container class="mx-auto">
-    {# Afficher le contenu de la page d'accueil #}
-    <div class="mt-8 prose mx-auto">
-      {{ post.content }}
+<main class="">
+  <section
+    class="w-full h-screen relative z-0"
+    {%
+    if
+    banner_image
+    %}
+    style="
+    background-image: url('{{ banner_image.url }}');
+    background-size: cover;
+    background-position: center center;
+  
+"
+    {%
+    endif
+    %}>
+    <div
+      class="w-full h-full bg-gradient-to-r from-white/50 to-transparent p-8">
+      <div
+        class="mx-auto max-w-screen-2xl flex items-center justify-left h-[100vh]">
+        {% if titre_page %}
+        <h1 class="text-7xl font-oswald font-medium text-primary leading-snug">
+          {{ titre_page }}
+        </h1>
+        {% endif %}
+      </div>
     </div>
-
-    {# Afficher les articles récents #}
-    <section class="mt-12">
-      <h2 class="text-2xl font-semibold text-gray-800">Articles récents</h2>
-      <ul class="mt-4 space-y-4">
-        {% for post in posts %}
-        <li>
-          <a href="{{ post.link }}" class="text-blue-600 hover:underline">{{
-            post.title
-          }}</a>
-        </li>
-        {% endfor %}
-      </ul>
-    </section>
-  </container>
+  </section>
+  <section
+    class="z-[999] relative mx-auto 2xl:max-w-screen-2xl xl:max-w-screen-xl">
+    <div
+      class="bg-primary p-8 mt-[-70px] flex lg:flex-row items-center justify-between gap-40">
+      <div class="w-1/2">
+        {% if description_entreprise %}
+        <div class="text-white font-poppins font-light">
+          {{ description_entreprise }}
+        </div>
+        {% endif %}
+      </div>
+      <div class="w-1/2">
+        <a
+          href="{{ link_to_about }}"
+          class="btn bg-secondary py-2 px-6 font-poppins text-white font-light hover:bg-white hover:text-primary transition-all duration-300"
+          >En savoir plus</a
+        >
+      </div>
+    </div>
+  </section>
+  <section class="mt-12 p-8">
+    <div
+      class="mx-auto max-w-[600px] flex flex-col items-center justify-center">
+      {% if titre_section %}
+      <span
+        class="text-3xl font-oswald font-regular text-secondary leading-snug">
+        {{ titre_section }}
+      </span>
+      {% endif %} {% if sous_titre_section %}
+      <h2 class="text-3xl font-poppins font-light text-primary leading-snug">
+        {{ sous_titre_section }}
+      </h2>
+      {% endif %} {% if description_section %}
+      <div class="font-poppins font-light text-base text-center py-5">
+        {{ description_section }}
+      </div>
+      {% endif %}
+    </div>
+    <div
+      style="gap: 20px"
+      class="mx-auto max-w-screen-2xl flex flex-col lg:flex-row items-center justify-between gap-[20px] mt-8">
+      {% for post in services %}
+      <article class="border rounded-lg overflow-hidden shadow-lg">
+        <a href="{{ post.link }}">
+          <img
+            src="{{ post.thumbnail.src('full') }}"
+            alt="{{ post.title }}"
+            class="w-full h-64 object-cover" />
+          <div class="p-6">
+            <h3
+              style="font-size: 20px"
+              class="font-light font-poppins text-primary text-center">
+              {{ post.title }}
+            </h3>
+          </div>
+        </a>
+      </article>
+      {% endfor %}
+    </div>
+  </section>
 </main>
 {% endblock %}
