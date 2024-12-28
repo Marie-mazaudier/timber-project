@@ -41,10 +41,13 @@
     <!-- Menu desktop classique -->
     <div class="w-1/2 hidden sm:block">
       <nav>
-        <ul class="w-full justify-center flex flex-row list-none">
+        <ul class="w-full justify-center flex flex-row list-none space-x-16">
           {% for item in menu.items %}
-          <li>
-            <a class="font-poppins p-4" href="{{ item.link }}">
+          <li
+            class="relative {% if not loop.first %}before:content-[''] before:absolute before:-left-8 before:top-1/2 before:-translate-y-1/2 before:w-[1px] before:h-[2px] before:bg-primary{% endif %}">
+            <a
+              class="font-oswald uppercase text-primary text-lg"
+              href="{{ item.link }}">
               {{ item.title }}
             </a>
           </li>
@@ -54,11 +57,13 @@
     </div>
 
     <div class="w-2/3 lg:w-1/4 flex items-center justify-end lg:justify-center">
+      {% if company_phone %}
       <a
         href="+33611186046"
         class="btn bg-primary py-2 px-6 font-poppins text-white font-light hover:bg-secondary hover:text-white transition-all duration-300">
-        06 11 18 60 46
+        {{ company_phone }}
       </a>
+      {% endif %}
 
       <!-- Bouton burger (mobile uniquement) -->
       <button

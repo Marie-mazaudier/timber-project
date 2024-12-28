@@ -3,12 +3,12 @@
   {# Affichage des champs ACF #}
   <section class="w-full bg-lightBg">
     <div
-      class="mx-auto py-20 max-w-screen-2xl flex lg:flex-row items-stretch justify-between gap-0">
+      class="px-4 mx-auto py-20 max-w-screen-2xl flex lg:flex-row items-stretch justify-between gap-0">
       <div
         class="lg:w-[50%] min-h-full text-primary flex flex-col justify-center space-y-4">
-        <span class="font-oswald uppercase text-secondary text-3xl">{{
-          acf.sous_titre_section
-        }}</span>
+        <span class="font-oswald uppercase text-secondary text-3xl">
+          {{ acf.sous_titre_section }}
+        </span>
 
         <h1 class="font-poppins font-light text-primary text-4xl">
           {{ acf.titre_section }}
@@ -19,6 +19,58 @@
           {{ acf.description_section }}
         </div>
       </div>
+    </div>
+  </section>
+
+  <section class="bg-white w-full px-4">
+    <div
+      class="mx-auto py-20 max-w-screen-2xl flex flex-col lg:flex-row font-poppins font-light items-stretch justify-between gap-0">
+      {% if company_phone %}
+      <div class="mb-2 text-base flex flex-col space-y-4">
+        <p class="">
+          <strong class="text-primary font-light text-2xl leading-relaxed"
+            >Téléphone :</strong
+          >
+        </p>
+        <p>
+          {{ company_phone }}
+        </p>
+      </div>
+      {% endif %} {% if company_email %}
+      <div class="mb-2 text-base flex flex-col space-y-4">
+        <p class="">
+          <strong class="text-primary font-light text-2xl leading-relaxed"
+            >Email :</strong
+          >
+        </p>
+        <p>
+          <a href="mailto:{{ company_email }}">{{ company_email }}</a>
+        </p>
+      </div>
+
+      {% endif %} {% if company_hours %}
+      <div class="mb-2 text-base flex flex-col space-y-4">
+        <p class="">
+          <strong class="text-primary font-light text-2xl leading-relaxed"
+            >Horaires :</strong
+          >
+        </p>
+        <p>
+          {{ company_hours | raw }}
+        </p>
+      </div>
+
+      {% endif %} {% if company_address %}
+      <div class="mb-2 text-base flex flex-col space-y-4">
+        <p class="">
+          <strong class="text-primary font-light text-2xl leading-relaxed"
+            >Adresse :</strong
+          >
+        </p>
+        <p>{{ company_address | raw }}</p>
+      </div>
+
+      {% endif %}
     </div>
   </section>
 </main>
