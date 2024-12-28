@@ -1,0 +1,19 @@
+# Fichiers sensibles
+wp-config.php
+*.log
+error_log
+wp-content/debug.log
+.env
+conf/
+logs/
+
+# Fichiers système
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
+
+# Dépendances
+node_modules/
+vendor/
+composer.lock
