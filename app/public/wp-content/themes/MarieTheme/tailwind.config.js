@@ -1,12 +1,13 @@
 /** @type {import('tailwindcss').Config} */
+/** @type {import('tailwindcss').Config} */
+const safelist = require("./safelist.json");
 module.exports = {
   content: [
-    "./templates/**/*.twig", // Tous les fichiers Twig dans templates
-    "./**/*.php", // Tous les fichiers PHP dans ton thème
-    "./*.php", // Fichiers PHP dans le dossier racine (comme functions.php)
+    "./templates/**/*.twig",
+    "./**/*.php",
+    "!./node_modules/**/*",
+    "!./vendor/**/*",
   ],
-  safelist: ["top-0", "bg-black"], // Ajoute les classes nécessaires ici
-
   theme: {
     extend: {
       fontFamily: {
@@ -23,14 +24,15 @@ module.exports = {
         primary: "#1F487C",
         secondary: "#FF0000",
         base: "#0A003F",
-        lightBg: "#F2F3F5", // Nom utilisé : lightBg
+        lightBg: "#F2F3F5",
         white: "#FFFFFF",
       },
-      safelist: [
-        {
-          pattern: /bg-\[url\(.*\)\]/,
-        },
-      ],
+      safelist: safelist,
+    },
+  },
+  variants: {
+    extend: {
+      backgroundColor: ["hover", "focus"],
     },
   },
   plugins: [require("tailwindcss"), require("autoprefixer")],

@@ -2,13 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
-/*.maclasssurmesure {
-    @apply text-xl font-bold text-red-500;
-}*/
+/* header sticky*/
 .sticky-on .logo {
   width: 80px;
   height: 80px;
 }
+/*CF7*/
 .wpcf7 input,
 .wpcf7 textarea {
   @apply border-primary border-b px-4 py-2 w-full font-poppins font-light text-base;
@@ -47,3 +46,23 @@ textarea {
 .cf-col-12 {
   @apply w-full;
 }
+.fade-in {
+  opacity: 0;
+}
+
+/*Keyframes
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.fade-in {
+  animation: fadeIn 0.8s ease-out;
+}
+*/

@@ -6,7 +6,8 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:css": "postcss assets/css/tailwind-source.css -o assets/css/style-main.css",
     "dev": "npm run watch:css",
-    "watch:css": "postcss assets/css/tailwind-source.css -o assets/css/style-main.css --watch"
+    "watch:css": "postcss assets/css/tailwind-source.css -o assets/css/style-main.css --watch",
+    "generate:safelist": "node generate-safelist.js"
   },
   "keywords": [],
   "author": "",
@@ -15,7 +16,8 @@
   "dependencies": {
     "@headlessui/react": "^2.2.0",
     "@headlessui/vue": "^1.7.23",
-    "autoprefixer": "^10.4.20"
+    "autoprefixer": "^10.4.20",
+    "gsap": "^3.12.5"
   },
   "devDependencies": {
     "postcss": "^8.4.49",

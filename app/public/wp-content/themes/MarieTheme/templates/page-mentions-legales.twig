@@ -1,0 +1,10 @@
+{% extends "base.twig" %} {% block content %}
+<main>
+  <section class="px-8 lg:p-20 space-y-8">
+    <h1 class="font-oswald uppercase font-light text-primary text-4xl">
+      {{ post.title }}
+    </h1>
+    <div class="font-poppins text-base">{{ post.content }}</div>
+  </section>
+</main>
+{% endblock %}

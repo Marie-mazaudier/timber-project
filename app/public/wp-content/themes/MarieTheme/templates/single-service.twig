@@ -1,0 +1,38 @@
+{% extends "base.twig" %} {% block content %}
+<main>
+  <section
+    class="flex flex-col lg:flex-row items-stretch justify-between gap-0">
+    <div class="lg:w-[50%] min-h-full">
+      {% if post.thumbnail %}
+      <img
+        src="{{ post.thumbnail.src('large') }}"
+        alt="{{ post.title }}"
+        class="h-[45vh] lg:h-[100vh] object-cover object-center w-full" />
+      {% endif %}
+    </div>
+    <div
+      class="lg:w-[50%] min-h-full px-14 py-16 bg-lightBg space-y-10 text-primary flex flex-col justify-center">
+      <h1 class="font-oswald uppercase font-light text-primary text-4xl">
+        {{ post.title }}
+      </h1>
+      {% if acf.sous_titre_1 %}
+      <h2 class="font-poppins text-2xl">
+        {{ acf.sous_titre_1 }}
+      </h2>
+      {% endif %} {% if acf.description_1 %}
+      <div class="font-poppins font-light text-md text-base">
+        {{ acf.description_1 | raw }}
+      </div>
+      {% endif %} {% if acf.sous_titre_2 %}
+      <h2 class="font-poppins text-2xl">
+        {{ acf.sous_titre_2 }}
+      </h2>
+      {% endif %} {% if acf.description_2 %}
+      <div class="font-poppins font-light text-md text-base">
+        {{ acf.description_2 | raw }}
+      </div>
+      {% endif %}
+    </div>
+  </section>
+</main>
+{% endblock %}
