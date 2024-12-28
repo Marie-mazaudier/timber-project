@@ -1,17 +1,41 @@
 {% extends 'base.twig' %} {% block content %}
 <main>
-  <h1>{{ post.title }}</h1>
-  <div>
-    {{ post.content }}
-  </div>
-
   {# Affichage des champs ACF #}
-  <section class="bg-slate-600 text-white">
-    <h2 class="about-title">{{ titre_section }}</h2>
-    <p class="about-description">{{ description }}</p>
-    {% if image %}
-    <img class="about-image" src="{{ image.url }}" alt="{{ image.alt }}" />
-    {% endif %}
+  <section class="flex lg:flex-row items-stretch justify-between gap-0">
+    <div
+      class="lg:w-[40%] min-h-full px-10 py-16 bg-lightBg text-primary flex flex-col justify-center space-y-4">
+      <span class="font-oswald uppercase text-secondary text-3xl">{{
+        acf.sous_titre_section
+      }}</span>
+
+      <h1 class="font-poppins font-light text-primary text-4xl">
+        {{ acf.titre_section }}
+      </h1>
+      <div class="font-poppins font-light text-md text-base">
+        {{ acf.description_section }}
+      </div>
+    </div>
+    <div
+      class="lg:w-[60%] h-[45vh] lg:h-[100vh] min-h-full bg-cover bg-center bg-dynamic"
+      role="img"
+      aria-label="{{ acf.image_section.alt }}"></div>
   </section>
+
+  {# Styles CSS à l'intérieur du block content #}
+  <style>
+    .bg-dynamic {
+      background-image: url("{{ acf.image_section.sizes.small }}");
+    }
+    @media (min-width: 768px) {
+      .bg-dynamic {
+        background-image: url("{{ acf.image_section.sizes.medium }}");
+      }
+    }
+    @media (min-width: 1024px) {
+      .bg-dynamic {
+        background-image: url("{{ acf.image_section.sizes.large }}");
+      }
+    }
+  </style>
 </main>
 {% endblock %}

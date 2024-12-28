@@ -64,4 +64,7 @@ add_filter('template_include', function($template) {
     return $template;
 });
 
-require_once get_template_directory() . '/inc/setup.php';
+// Inclure tous les fichiers de configuration
+require_once get_template_directory() . '/inc/scripts.php';
+require_once get_template_directory() . '/inc/images.php';
+require_once get_template_directory() . '/inc/customizer/register.php';

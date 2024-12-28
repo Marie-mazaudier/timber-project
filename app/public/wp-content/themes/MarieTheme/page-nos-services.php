@@ -13,6 +13,12 @@ $context['post'] = Timber::get_post();
 
 // Récupère tous les champs ACF d'un coup
 $context['acf'] = get_fields($post->ID);
+// Récupérer les services (CPT) - ajuster le nombre selon tes besoins
+$args = [
+    'post_type' => 'service',
+    'posts_per_page' => 6,  // Limiter à 6 services
+];
 
+$context['services'] = Timber::get_posts($args);
 // Rendre le template Twig approprié
-Timber::render( 'page-a-propos.twig', $context );
+Timber::render( 'page-nos-services.twig', $context );

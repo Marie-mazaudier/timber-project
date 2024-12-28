@@ -26,6 +26,11 @@ module.exports = {
         lightBg: "#F2F3F5", // Nom utilisé : lightBg
         white: "#FFFFFF",
       },
+      safelist: [
+        {
+          pattern: /bg-\[url\(.*\)\]/,
+        },
+      ],
     },
   },
   plugins: [require("tailwindcss"), require("autoprefixer")],

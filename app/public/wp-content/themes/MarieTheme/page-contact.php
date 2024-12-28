@@ -5,6 +5,7 @@ if ( ! class_exists( 'Timber' ) ) {
     return;
 }
 
+
 // Charger le contexte de Timber
 $context = Timber::context();
 
@@ -15,4 +16,4 @@ $context['post'] = Timber::get_post();
 $context['acf'] = get_fields($post->ID);
 
 // Rendre le template Twig approprié
-Timber::render( 'page-a-propos.twig', $context );
+Timber::render( 'page-contact.twig', $context );
