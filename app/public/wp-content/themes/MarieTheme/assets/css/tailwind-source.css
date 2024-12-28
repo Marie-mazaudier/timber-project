@@ -9,3 +9,41 @@
   width: 80px;
   height: 80px;
 }
+.wpcf7 input,
+.wpcf7 textarea {
+  @apply border-primary border-b px-4 py-2 w-full font-poppins font-light text-base;
+}
+textarea {
+  @apply max-h-[100px];
+}
+.wpcf7-acceptance {
+  @apply flex items-center gap-2  w-full font-poppins font-light text-base;
+}
+
+.wpcf7-list-item {
+  @apply flex items-center gap-2;
+}
+
+.wpcf7-list-item input[type="checkbox"] {
+  @apply w-5 h-5;
+}
+.wpcf7-list-item {
+  @apply block w-full;
+}
+.wpcf7-form {
+  @apply space-y-4;
+}
+.wpcf7 input[type="submit"] {
+  @apply w-auto bg-primary py-2 px-6 font-poppins text-white font-light hover:bg-secondary hover:text-white transition-all duration-300 cursor-pointer;
+}
+.cf-container {
+  @apply flex flex-wrap gap-4;
+}
+
+.cf-col-6 {
+  @apply w-full lg:w-[48%];
+}
+
+.cf-col-12 {
+  @apply w-full;
+}

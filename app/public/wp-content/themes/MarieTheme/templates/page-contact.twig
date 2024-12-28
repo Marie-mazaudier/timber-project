@@ -24,10 +24,10 @@
 
   <section class="bg-white w-full px-4">
     <div
-      class="mx-auto py-20 max-w-screen-2xl flex flex-col lg:flex-row font-poppins font-light items-stretch justify-between gap-0">
+      class="mx-auto py-8 lg:py-20 max-w-screen-xl flex flex-col lg:flex-row font-poppins font-light items-stretch justify-between divide-x divider-lightBg gap-0">
       {% if company_phone %}
-      <div class="mb-2 text-base flex flex-col space-y-4">
-        <p class="">
+      <div class="mb-2 text-base flex flex-col space-y-4 px-4 lg:px-10">
+        <p class="text-left">
           <strong class="text-primary font-light text-2xl leading-relaxed"
             >Téléphone :</strong
           >
@@ -37,7 +37,7 @@
         </p>
       </div>
       {% endif %} {% if company_email %}
-      <div class="mb-2 text-base flex flex-col space-y-4">
+      <div class="mb-2 text-base flex flex-col space-y-4 px-4 lg:px-10">
         <p class="">
           <strong class="text-primary font-light text-2xl leading-relaxed"
             >Email :</strong
@@ -49,7 +49,7 @@
       </div>
 
       {% endif %} {% if company_hours %}
-      <div class="mb-2 text-base flex flex-col space-y-4">
+      <div class="mb-2 text-base flex flex-col space-y-4 px-4 lg:px-10">
         <p class="">
           <strong class="text-primary font-light text-2xl leading-relaxed"
             >Horaires :</strong
@@ -61,7 +61,7 @@
       </div>
 
       {% endif %} {% if company_address %}
-      <div class="mb-2 text-base flex flex-col space-y-4">
+      <div class="mb-2 text-base flex flex-col space-y-4 px-4 lg:px-10">
         <p class="">
           <strong class="text-primary font-light text-2xl leading-relaxed"
             >Adresse :</strong
@@ -71,6 +71,26 @@
       </div>
 
       {% endif %}
+    </div>
+  </section>
+
+  <section class="bg-white w-full">
+    <div
+      class="px-4 2xl:px-0 mx-auto py-4 lg:py-10 max-w-screen-xl flex flex-col lg:flex-row items-stretch justify-between gap-20">
+      <div
+        class="lg:w-[50%] min-h-full text-primary flex flex-col justify-center space-y-4">
+        {{ shortcode('[contact-form-7 id="90c0727" title="Contact form 1"]') }}
+      </div>
+      <div class="lg:w-[50%] min-h-full">
+        <div class="w-full h-[450px]">
+          <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d5818.95081809491!2d6.535412047756321!3d43.17853460826659!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x12cec985c5e44625%3A0xb3609adcc04cc3ba!2sBergon%20P%C3%B4le%20Chauffage!5e0!3m2!1sfr!2sfr!4v1735397657600!5m2!1sfr!2sfr"
+            class="w-full h-full border-0"
+            allowfullscreen=""
+            loading="lazy">
+          </iframe>
+        </div>
+      </div>
     </div>
   </section>
 </main>
